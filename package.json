@@ -1,0 +1,23 @@
+{
+  "name": "codingassignment",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000F\u0000E\u0000_\u0000T\u0000e\u0000c\u0000h\u0000_\u0000W\u0000e\u0000e\u0000k\u00000\u00006\u0000_\u0000C\u0000A\u0000\r\u0000 \u0000",
+  "main": "crudapp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markslaysman/FE_Tech_Week06_CA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markslaysman/FE_Tech_Week06_CA/issues"
+  },
+  "homepage": "https://github.com/markslaysman/FE_Tech_Week06_CA#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0"
+  }
+}

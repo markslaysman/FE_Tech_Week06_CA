@@ -39,8 +39,6 @@ class DepartmentService {
     }
 
     static updateDepartment(department) {
-        console.log(JSON.stringify(department));
-        console.log(department.id);
         return $.ajax({
             url: this.url + `/${department.id}`,
             dataType: 'json',
@@ -94,11 +92,11 @@ class DOMManager {
         }
     }
     
-    static deleteEmployee(departmentId, employeeId) {
+    static deleteEmployee(departmentId, employeeName) {
         for (let department of this.departments) {
             if (department.id == departmentId) {
                 for (let employee of department.employees) {
-                    if (employee.id == employeeId) {
+                    if (employee.name == employeeName) {
                         department.employees.splice(department.employees.indexOf(employee), 1);
                         DepartmentService.updateDepartment(department)
                             .then(() => {
@@ -142,9 +140,9 @@ class DOMManager {
             for (let employee of department.employees) {
                 $(`#${department.id}`).find('.card-body').append(
                     `<p>
-                        <span id="name-${employee.id}"><strong>Name: </strong> ${employee.name}</span>
-                        <span id="jobtitle-${employee.id}"><strong>Job Title: </strong> ${employee.jobtitle}</span>
-                        <button class="btn btn-danger" onclick="DOMManager.deleteEmployee('${department.id}', '${employee.id}')">Delete Employee</button>
+                        <span id="name-${employee.name}"><strong>Name: </strong> ${employee.name}</span>
+                        <span id="jobtitle-${employee.jobtitle}"><strong>Job Title: </strong> ${employee.jobtitle}</span>
+                        <button class="btn btn-danger" onclick="DOMManager.deleteEmployee('${department.id}', '${employee.name}')">Delete Employee</button>
                     `
                 );
             }
